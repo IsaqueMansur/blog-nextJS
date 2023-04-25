@@ -15,17 +15,17 @@ export type PostAuthor = {
   };
 };
 
-export type CategoryAttributesData = {
+export type CategorieAttributesData = {
   name: string;
   created_by: number;
   updated_by: number;
   publishedAt: string;
 };
 
-export type PostCategory = {
+export type PostCategorie = {
   data: {
     id: PostID;
-    attributes: CategoryAttributesData;
+    attributes: CategorieAttributesData;
   };
 };
 
@@ -62,8 +62,9 @@ export type PostCover = PostCoverFormat & {
       provider: string;
       created_by: number;
       updated_by: number;
-      created_at: string;
-      updated_at: string;
+      createdAt: string;
+      updatedAt: string;
+      url: string;
       formats: {
         thumbnail: PostCoverFormat;
         small: PostCoverFormat;
@@ -79,11 +80,11 @@ export type PostAttributesData = {
   content: string;
   slug: string;
   author: PostAuthor;
-  category: PostCategory;
+  categorie: PostCategorie;
   created_by: PostCreatedBy;
   updated_by: PostCreatedBy;
-  created_at: string;
-  updated_at: string;
+  createdAt: string;
+  updatedAt: string;
   cover: PostCover;
 };
 
