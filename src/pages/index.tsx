@@ -8,7 +8,6 @@ export type HomeProps = {
 };
 
 export default function Home({ posts }: HomeProps) {
-  console.log(posts);
   return <HomePage posts={posts} />;
 }
 

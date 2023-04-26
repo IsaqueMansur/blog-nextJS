@@ -1,3 +1,4 @@
+import Comments from '@/components/Comments';
 import { Heading } from '@/components/Heading';
 import { PostContainer } from '@/components/PostContainer';
 import { PostCover } from '@/components/PostCover';
@@ -22,6 +23,7 @@ export const Post = function ({ post }: PostProps) {
         date={post.attributes.createdAt}
       />
       <PostContainer content={post.attributes.content} />
+      <Comments title={post.attributes.title} slug={post.attributes.slug} />
     </>
   );
 };
