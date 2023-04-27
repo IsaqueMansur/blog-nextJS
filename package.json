@@ -10,6 +10,7 @@
     "deploy:static": "next build && next export"
   },
   "dependencies": {
+    "@netlify/plugin-nextjs": "^4.36.0",
     "@types/node": "18.15.11",
     "@types/react": "18.0.35",
     "@types/react-dom": "18.0.11",
