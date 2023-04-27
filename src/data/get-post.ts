@@ -12,5 +12,6 @@ export const getPost = async (slug: string | string[]): Promise<PostData[]> => {
     ...data.data[0],
     attributes: { ...data.data[0].attributes, content },
   };
+
   return [finalPost];
 };
