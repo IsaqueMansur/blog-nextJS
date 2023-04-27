@@ -3,7 +3,7 @@ import styled, { css } from 'styled-components';
 export const Container = styled.header`
   ${({ theme }) => css`
     display: flex;
-    background: ${theme.colors.primary};
+    background: 'red';
     color: ${theme.colors.white};
     font-size: ${theme.font.sizes.large};
     text-align: start;
