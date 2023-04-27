@@ -12,10 +12,7 @@ export default function App({ Component, pageProps }: AppProps) {
     <ThemeProvider theme={theme}>
       <Head>
         <title>Antediguemon</title>
-        <meta
-          name="description"
-          content="aysalsasaaysalsasaaysalsasaaysalsasa"
-        ></meta>
+        <meta name="description" content="Blog sobre tecnologia"></meta>
       </Head>
       <Header />
       <Container>
