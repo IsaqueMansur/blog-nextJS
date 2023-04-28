@@ -2,3 +2,6 @@
   command   = "npm run deploy:static"
   functions = "out_functions"
   publish   = "out"
+
+
+
