@@ -11,23 +11,6 @@ export type DynamicPostProps = {
   post: PostData;
 };
 
-const DynamicPost = ({ post }: DynamicPostProps) => {
-  const router = useRouter();
-  if (router.isFallback) {
-    return (
-      <div>
-        <h2>Carregando conteúdo...</h2>
-      </div>
-    );
-  }
-  if (!post) {
-    return <Error statusCode={404} />;
-  }
-  return <Post post={post} />;
-};
-
-export default DynamicPost;
-
 export const getStaticPaths: GetStaticPaths = async () => {
   const numberOfPosts = await CountAllPosts();
   const posts = await getAllPosts(
@@ -47,8 +30,29 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
 export const getStaticProps: GetStaticProps = async (ctx) => {
   const posts = await getPost(ctx.params?.slug as string | string[]);
-  return {
-    props: { post: posts[0] },
-    revalidate: 300,
-  };
+  if (posts.length) {
+    return {
+      props: { post: posts[0] },
+      revalidate: 300,
+    };
+  } else {
+    return { props: { data: null } };
+  }
 };
+
+const DynamicPost = ({ post }: DynamicPostProps) => {
+  const router = useRouter();
+  if (router.isFallback) {
+    return (
+      <div>
+        <h2>Carregando conteúdo...</h2>
+      </div>
+    );
+  }
+  if (!post) {
+    return <Error statusCode={404} />;
+  }
+  return <Post post={post} />;
+};
+
+export default DynamicPost;
