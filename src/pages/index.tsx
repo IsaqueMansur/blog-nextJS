@@ -15,5 +15,6 @@ export const getStaticProps: GetStaticProps = async () => {
   const posts = await getAllPosts('&sort=id:desc');
   return {
     props: { posts },
+    revalidate: 300,
   };
 };
