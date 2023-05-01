@@ -1,4 +1,3 @@
-import { type } from 'os';
 import { Container } from './styled';
 import { formatDate } from '@/utils/format-date';
 
