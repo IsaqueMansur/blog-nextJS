@@ -6,4 +6,8 @@ export const Container = styled.h2`
     margin: ${theme.spacings.large} 0;
     text-align: center;
   `};
+
+  @media (max-width: 500px) {
+    font-size: ${({ theme }) => theme.font.sizes.large};
+  }
 `;
