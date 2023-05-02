@@ -20,14 +20,14 @@ export const Pagination = ({
     <Container>
       {hasPreviusPage && (
         <PreviousLink>
-          <Link href={previusLink}>
+          <Link href="/post/page/[...param]" as={previusLink}>
             <h5>Previous</h5>
           </Link>
         </PreviousLink>
       )}
       {hasNextPage && (
         <NextLink>
-          <Link href={nextLink}>
+          <Link href="/post/page/[...param]" as={nextLink}>
             <h5>Next</h5>
           </Link>
         </NextLink>

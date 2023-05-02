@@ -3,5 +3,5 @@ export type PaginationProtocol = {
   previusPage: number;
   numberOfPosts: number;
   postsPerPage: number;
-  category?: string;
+  category: string | null;
 };

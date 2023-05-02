@@ -19,11 +19,17 @@ export default function HomePage({
     <>
       <Head>
         <title>
-          {category ? `${category} - Antediguemon` : 'Antediguemon'}
+          {category
+            ? `${posts[0].attributes.categorie.data.attributes.name} - Antediguemon`
+            : 'Antediguemon'}
         </title>
         <meta name="description" content="Blog sobre tecnologia"></meta>
       </Head>
-      {category && <Category>Categoria: {category}</Category>}
+      {category && (
+        <Category>
+          Categoria: {posts[0].attributes.categorie.data.attributes.name}
+        </Category>
+      )}
       <Container>
         {posts.map((post) => (
           <PostCard
