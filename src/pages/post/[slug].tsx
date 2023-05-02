@@ -50,7 +50,7 @@ const DynamicPost = ({ post }: DynamicPostProps) => {
     );
   }
   if (!post) {
-    return <Error statusCode={404} />;
+    return <Error statusCode={404} title="Nenhum post foi encontrado" />;
   }
   return <Post post={post} />;
 };

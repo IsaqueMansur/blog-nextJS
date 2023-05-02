@@ -17,7 +17,8 @@ export default function Page({ posts, category, pagination }: PageProps) {
   const router = useRouter();
 
   if (router.isFallback) return <h2>Carregando conteúdo...</h2>;
-  if (!posts) return <Error statusCode={404} />;
+  if (!posts)
+    return <Error statusCode={404} title="Nenhum post foi encontrado" />;
   return <HomePage posts={posts} category={category} pagination={pagination} />;
 }
 
@@ -32,8 +33,7 @@ export const getStaticProps: GetStaticProps = async (ctx) => {
   const page = Number(ctx?.params?.param ? ctx.params.param[0] : 1);
   const readCategory = ctx?.params?.param as string[];
   const category = readCategory[1] ? readCategory[1] : null;
-  console.log(category);
-  const postsPerPage = 3;
+  const postsPerPage = 6;
   const startFrom = (page - 1) * postsPerPage;
   const nextPage = page + 1;
   const previusPage = page - 1;

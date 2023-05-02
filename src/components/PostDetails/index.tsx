@@ -1,4 +1,3 @@
-import { type } from 'os';
 import { Container } from './styled';
 import { Date } from '../Date';
 import Link from 'next/link';
@@ -16,7 +15,10 @@ export const PostDetails = function ({
   return (
     <Container>
       Publicado em <Date date={date} /> por {author} (
-      <Link href={`/categories/${category}`}>Categoria: {category}</Link>)
+      <Link as={`/post/page/1/${category}`} href="/post/page/[...param]">
+        Categoria: {category}
+      </Link>
+      )
     </Container>
   );
 };

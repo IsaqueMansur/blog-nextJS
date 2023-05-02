@@ -3,7 +3,6 @@ import { Heading } from '@/components/Heading';
 import { PostContainer } from '@/components/PostContainer';
 import { PostCover } from '@/components/PostCover';
 import { PostDetails } from '@/components/PostDetails';
-import { SITE_NAME } from '@/config/app-config';
 import { PostData } from '@/domain/posts/posts';
 import { removeHtml } from '@/utils/remove-html';
 import Head from 'next/head';
@@ -16,13 +15,11 @@ export const Post = function ({ post }: PostProps) {
   return (
     <>
       <Head>
-        <title>
-          {post.attributes.title} - {SITE_NAME}
-          <meta
-            name="description"
-            content={removeHtml(post.attributes.content).slice(0, 150)}
-          />
-        </title>
+        <title>{post.attributes.title} - Antediguemon</title>
+        <meta
+          name="description"
+          content={removeHtml(post.attributes.content).slice(0, 150)}
+        />
       </Head>
       <Heading>{post.attributes.title}</Heading>
       <PostCover
