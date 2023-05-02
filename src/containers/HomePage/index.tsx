@@ -2,21 +2,34 @@ import { PostData } from '@/domain/posts/posts';
 import { Container, Category } from './styled';
 import { PostCard } from '@/components/PostCard';
 import Head from 'next/head';
+import { PaginationProtocol } from '@/domain/posts/pagination';
+import { Pagination } from '@/components/Pagination';
 
 export type HomePageProps = {
   posts: PostData[];
   category?: string;
+  pagination?: PaginationProtocol;
 };
-export default function HomePage({ posts, category }: HomePageProps) {
+export default function HomePage({
+  posts,
+  category,
+  pagination,
+}: HomePageProps) {
   return (
     <>
       <Head>
         <title>
-          {category ? `${category} - Antediguemon` : 'Antediguemon'}
+          {category
+            ? `${posts[0].attributes.categorie.data.attributes.name} - Antediguemon`
+            : 'Antediguemon'}
         </title>
         <meta name="description" content="Blog sobre tecnologia"></meta>
       </Head>
-      {category && <Category>Categoria: {category}</Category>}
+      {category && (
+        <Category>
+          Categoria: {posts[0].attributes.categorie.data.attributes.name}
+        </Category>
+      )}
       <Container>
         {posts.map((post) => (
           <PostCard
@@ -27,6 +40,7 @@ export default function HomePage({ posts, category }: HomePageProps) {
           ></PostCard>
         ))}
       </Container>
+      {pagination && <Pagination {...pagination} />}
     </>
   );
 }
