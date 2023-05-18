@@ -12,7 +12,7 @@ export function PostCard({ slug, title, cover }: PostCardProps) {
     <Container>
       <PostCardCover>
         <Link href="/post/[slug]" as={`/post/${slug}`}>
-          <img src={cover} alt={title} crossOrigin="anonymous" />
+          {/* <img src={cover} alt={title} crossOrigin="anonymous" /> */}
         </Link>
       </PostCardCover>
 

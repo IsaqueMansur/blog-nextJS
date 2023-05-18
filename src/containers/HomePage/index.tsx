@@ -43,11 +43,11 @@ export default function HomePage({
         ))}
       </Container>
       {pagination && <Pagination {...pagination} />}
-      {!pagination?.nextPage && (
+      {/*    {!pagination?.nextPage && (
         <Link href="/post/page/[...param]" as="/post/page/1" passHref>
           <AllPostsLink>Ver todos os posts</AllPostsLink>
         </Link>
-      )}
+      )} */}
     </>
   );
 }

@@ -8,6 +8,11 @@ export function Header() {
       <Link href="/">
         <p>{SITE_NAME}</p>
       </Link>
+      <Link href="/definitions">
+        <p style={{ color: 'red', marginLeft: '60px' }}>
+          Nossa sinfonia (clica)
+        </p>
+      </Link>
     </Container>
   );
 }

@@ -1,5 +1,5 @@
 import { Container } from './styled';
 
 export const Footer = () => {
-  return <Container>Feito com com código</Container>;
+  return <Container>Feito com com amor e novos aprendizados</Container>;
 };
