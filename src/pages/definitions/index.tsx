@@ -1,4 +1,4 @@
-import { Container, MusicView } from './style';
+import { Container, MusicView } from '../../styles/tat';
 
 export default function Definitions() {
   return (
